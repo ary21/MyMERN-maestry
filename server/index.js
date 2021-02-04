@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
 app.get('/', (req, res) => {
-    res.send('Hello my mern maestry api');
+    res.send('Hello my mern maestry api run');
 });
 
 // Database
