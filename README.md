@@ -3,3 +3,16 @@ Learn about MERN stack, use mongodb, express, reactjs, nodejs with follow tutori
 
 ## Demo
 https://mymern-maetry.netlify.app/
+
+
+## Setup
+- cd server
+- npm i && npm start
+- cd client
+- npm i && npm start
+
+## Thanks to
+- github.com/adrianhajdin
+- netlify.com
+- heroku.com
+- cloud.mongodb.com
