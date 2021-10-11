@@ -21,7 +21,6 @@ https://mymern-maetry.netlify.app/
     > git commit -am "make it better"
     > git push heroku master
 
-
 ## Thanks to
 * github.com/adrianhajdin
 * netlify.com
