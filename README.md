@@ -15,11 +15,11 @@ https://mymern-maetry.netlify.app/
 
 ## Deployed with 
 * on client :
-    > run build > upload build folder for deploy netlify
+    * > run build > upload build folder for deploy netlify
 * on server :
-    > git add .
-    > git commit -am "make it better"
-    > git push heroku master
+    * > git add .
+    * > git commit -am "make it better"
+    * > git push heroku master
 
 ## Thanks to
 * github.com/adrianhajdin
