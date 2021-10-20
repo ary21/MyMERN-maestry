@@ -1,0 +1,28 @@
+import { 
+    FECTH_ALL,
+    CREATE,
+    UPDATE,
+    DELETE,
+    LIKE
+} from '../constants/type';
+
+const postReducer = (posts = [], action) => {
+    console.log('check action.payload >>>>', action.payload);
+
+    switch (action.type) {
+        case FECTH_ALL:
+            return action.payload;
+        case CREATE:
+            return [ ...posts, action.payload ];
+        case UPDATE:
+            return posts.map((post) => post._id === action.payload._id ? action.payload : post);
+        case DELETE:
+            return posts.filter((post) => post._id !== action.payload);
+        case LIKE:
+            return posts.map((post) => post._id === action.payload._id ? action.payload : post);
+        default:
+            return posts;
+    }
+};
+
+export default postReducer;
