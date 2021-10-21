@@ -27,3 +27,4 @@ https://mymern-maetry.netlify.app/
 * netlify.com
 * heroku.com
 * cloud.mongodb.com
+* resources : https://www.youtube.com/watch?v=ngc9gnGgUdA&list=PL6QREj8te1P7VSwhrMf3D3Xt4V6_SRkhu

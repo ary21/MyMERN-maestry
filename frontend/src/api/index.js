@@ -1,7 +1,10 @@
 import axios from 'axios';
 
-// const baseUrl = `http://localhost:5050`;
-const baseUrl = `https://api-maestry-mearn-ary.herokuapp.com`;
+// Local Dev
+const baseUrl = `http://localhost:5050`;
+
+// Live
+// const baseUrl = `https://api-maestry-mearn-ary.herokuapp.com`;
 
 const url = `${baseUrl}/posts`;
 

@@ -7,8 +7,6 @@ import {
 } from '../constants/type';
 
 const postReducer = (posts = [], action) => {
-    console.log('check action.payload >>>>', action.payload);
-
     switch (action.type) {
         case FECTH_ALL:
             return action.payload;

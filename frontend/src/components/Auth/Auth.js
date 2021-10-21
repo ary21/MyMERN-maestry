@@ -3,6 +3,7 @@ import { Avatar, Button, Paper, Grid, Typography, Container } from '@material-ui
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import { GoogleLogin } from 'react-google-login';
 import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 import Icon from './icon';
 import useStyles from './styles';
@@ -11,6 +12,7 @@ import Input from './Input';
 const Auth = () => {
     const classes = useStyles();
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const [showPassword, setShowPassword] = useState(false);
     const [isSignup, setIsSignup] = useState(false);
@@ -29,6 +31,7 @@ const Auth = () => {
 
         try {
             dispatch({ type: 'AUTH', data: { result, token }  });
+            history.push('/');
         } catch (error) {
             console.log(error);
         }
@@ -67,7 +70,7 @@ const Auth = () => {
                     </Grid>
                     <Button type="submit" variant="contained" fullWidth color="primary" className={classes.submit} >{isSignup ? 'Sign Up' : 'Sign In'}</Button>
                     <GoogleLogin
-                        clientId="556968066309-rh6d3k7r85agp6t0dimeb2gjtmf8j6q3.apps.googleusercontent.com"
+                        clientId="627868919286-7o8a27mv9m2qp5kpedt2j94nou28jgav.apps.googleusercontent.com"
                         render={(renderProps) => (
                             <Button
                                 className={classes.googleButton}
