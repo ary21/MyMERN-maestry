@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import decode from 'jwt-decode';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import { AppBar, Avatar, Typography, Toolbar, Button } from '@material-ui/core';
 
@@ -18,12 +19,19 @@ const Navbar = () => {
         dispatch({ type: 'LOGOUT' });
         history.push('/');
         setUser(null);
-    }
+    };
 
     useEffect(() => {
-        // TODO :: JWT
-        // const token = user?.token;
+        const token = user?.token;
+        if (token) {
+            const decodeToken = decode(token);
+            if (decodeToken.exp * 1000 < new Date().getTime()) {
+                logout();
+            }
+        }
+
         setUser(JSON.parse(localStorage.getItem('profile')));
+    // eslint-disable-next-line
     },[location])
 
     return (
