@@ -60,7 +60,7 @@ const Auth = () => {
 
     const switchMode = () => {
         setIsSignup(!isSignup);
-        handleShowPassword(false);
+        setShowPassword(false);
     };
 
     const handleShowPassword = () => setShowPassword(!showPassword);
@@ -77,7 +77,7 @@ const Auth = () => {
                         {isSignup && (
                             <>
                                 <Input name="firstName" label="First Name" handleChange={handleChange} autoFocus half />
-                                <Input name="lasttName" label="Last Name" handleChange={handleChange} half />
+                                <Input name="lastName" label="Last Name" handleChange={handleChange} half />
                             </>
                         )}
                         <Input name="email" label="Email" handleChange={handleChange} type="email" />

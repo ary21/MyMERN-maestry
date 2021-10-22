@@ -21,7 +21,7 @@ export const signin = async (req, res) => {
         
         const token = jwt.sign({ id: existingUser._id, email: existingUser.email }, 'test-secret-key', { expiresIn: '1h' });
 
-        res.status(200).json({ ...existingUser, token });
+        res.status(200).json({ result: existingUser, token });
     } catch (error) {
         console.error(error);
         res.status(400).json({ message: error.message });
@@ -43,12 +43,11 @@ export const signup = async (req, res) => {
         }
 
         const hashPassword = await bcrypt.hash(password, 12);
-        const newUser = new UserModel({ firstName, lastName, email, password: hashPassword });
-        await newUser.save();
+        const newUser = await UserModel.create({ name: `${firstName} ${lastName}`, email, password: hashPassword });
 
         const token = jwt.sign({ id: newUser._id, email: newUser.email }, 'test-secret-key', { expiresIn: '1h' });
 
-        res.status(200).json({ ...newUser, token });
+        res.status(200).json({ result: newUser, token });
     } catch (error) {
         console.error(error);
         res.status(400).json({ message: error.message });
