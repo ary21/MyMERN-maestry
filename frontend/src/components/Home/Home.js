@@ -12,7 +12,6 @@ const Home = () => {
     const dispatch = useDispatch();
 
     const [currentId, setCurrentId] = useState(null);
-    console.log('check currentId >>>>', currentId);
 
     useEffect(() => {
         dispatch(getPosts());
