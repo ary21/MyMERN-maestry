@@ -5,6 +5,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 
 import postRouter from './routes/postsRoute.js';
+import usersRoute from './routes/usersRoute.js';
 
 // Init
 const app = express();
@@ -28,3 +29,4 @@ mongoose.set('useFindAndModify', false);
 
 // Route
 app.use('/posts', postRouter);
+app.use('/users', usersRoute);

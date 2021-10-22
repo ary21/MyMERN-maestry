@@ -8,6 +8,15 @@ import { useHistory } from 'react-router-dom';
 import Icon from './icon';
 import useStyles from './styles';
 import Input from './Input';
+import { signup, signin } from '../../actions/auth';
+
+const initialState = {
+    firstName: '',
+    lasttName: '',
+    email: '',
+    password: '',
+    confirmPasword: '',
+}
 
 const Auth = () => {
     const classes = useStyles();
@@ -16,13 +25,20 @@ const Auth = () => {
 
     const [showPassword, setShowPassword] = useState(false);
     const [isSignup, setIsSignup] = useState(false);
+    const [formData, setFormData] = useState(initialState);
 
-    const handleSubmit = () => {
-
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log('submit formData >', formData);
+        if (isSignup) {
+            dispatch(signup(formData, history));
+        } else {
+            dispatch(signin(formData, history));
+        }
     };
-
-    const handleChange = () => {
-
+    
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
     const googleSuccess = async (res) => {
